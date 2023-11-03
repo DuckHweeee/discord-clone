@@ -1,6 +1,6 @@
 "use client";
 
-import { ServerWothMembersWithProfiles } from "@/type";
+import { ServerWithMembersWithProfiles } from "@/type";
 import { MemberRole } from "@prisma/client";
 import {
   DropdownMenu,
@@ -21,7 +21,7 @@ import {
 import { useModal } from "@/hooks/use-modal-store";
 
 interface ServerHeaderProps {
-  server: ServerWothMembersWithProfiles;
+  server: ServerWithMembersWithProfiles;
   role?: MemberRole;
 }
 
@@ -57,13 +57,19 @@ export const ServerHeader = ({ server, role }: ServerHeaderProps) => {
           </DropdownMenuItem>
         )}
         {isAdmin && (
-          <DropdownMenuItem className="px-3 py-2 text-sm cursor-pointer">
+          <DropdownMenuItem
+            className="px-3 py-2 text-sm cursor-pointer"
+            onClick={() => onOpen("editServer", { server })}
+          >
             Server Settings
             <Settings className="h-4 w-4 ml-auto" />
           </DropdownMenuItem>
         )}
         {isAdmin && (
-          <DropdownMenuItem className="px-3 py-2 text-sm cursor-pointer">
+          <DropdownMenuItem
+            className="px-3 py-2 text-sm cursor-pointer"
+            onClick={() => onOpen("members", { server })}
+          >
             Manage Members
             <Users className="h-4 w-4 ml-auto" />
           </DropdownMenuItem>
