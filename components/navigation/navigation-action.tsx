@@ -22,7 +22,7 @@ export const NavigationAction = () => {
           >
             <Plus
               className="group-hover:text-white transition
-                text-emerald-50"
+              text-emerald-50"
               size={25}
             />
           </div>
