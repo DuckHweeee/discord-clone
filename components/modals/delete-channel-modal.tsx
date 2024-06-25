@@ -58,7 +58,7 @@ export const DeleteChannelModal = () => {
           </DialogTitle>
           <DialogDescription className="text-center text-zinc-500">
             Are you sure want to do this? <br />
-            <span className="font-semibold text-indigo-500">
+            <span className="font-semibold text-red-500">
               {channel?.name}
             </span>{" "}
             will be permanetly deleted.
@@ -69,7 +69,7 @@ export const DeleteChannelModal = () => {
             <Button disabled={isLoading} onClick={onClose} variant="ghost">
               Cancel
             </Button>
-            <Button disabled={isLoading} onClick={onClick} variant="primary">
+            <Button disabled={isLoading} onClick={onClick} className="text-red-500">
               Confirm
             </Button>
           </div>

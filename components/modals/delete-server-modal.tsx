@@ -22,7 +22,7 @@ export const DeleteServerModal = () => {
   const router = useRouter();
 
   const isModalOpen = isOpen && type === "deleteServer";
-  const { server } = data;
+  const { server } = data || {};
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -46,12 +46,12 @@ export const DeleteServerModal = () => {
     <Dialog open={isModalOpen} onOpenChange={onClose}>
       <DialogContent className="bg-white text-black p-0 overflow-hidden">
         <DialogHeader className="pt-8 px-6">
-          <DialogTitle className="text-2xl text-center font-bold">
+          <DialogTitle className="text-2xl text-center text-red-500 font-bold">
             Delete Server
           </DialogTitle>
           <DialogDescription className="text-center text-zinc-500">
             Are you sure want to do this? <br />
-            <span className="font-semibold text-indigo-500">
+            <span className="font-semibold text-red-500">
               {server?.name}
             </span>{" "}
             will be permanetly deleted.
@@ -62,7 +62,7 @@ export const DeleteServerModal = () => {
             <Button disabled={isLoading} onClick={onClose} variant="ghost">
               Cancel
             </Button>
-            <Button disabled={isLoading} onClick={onClick} variant="primary">
+            <Button disabled={isLoading} onClick={onClick} className="bg-red-500 text-white">
               Confirm
             </Button>
           </div>
