@@ -19,7 +19,7 @@ export const DeleteMessageModal = () => {
   const { isOpen, onClose, type, data } = useModal();
 
   const isModalOpen = isOpen && type === "deleteMessage";
-  const { apiUrl, query } = data;
+  const { apiUrl, query } = data ||{};
 
   const [isLoading, setIsLoading] = useState(false);
 

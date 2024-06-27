@@ -23,7 +23,7 @@ export const DeleteChannelModal = () => {
   const router = useRouter();
 
   const isModalOpen = isOpen && type === "deleteChannel";
-  const { server, channel } = data;
+  const { server, channel } = data || {};
 
   const [isLoading, setIsLoading] = useState(false);
 

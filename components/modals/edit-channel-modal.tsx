@@ -52,7 +52,7 @@ export const EditChannelModal = () => {
   const router = useRouter();
 
   const isModalOpen = isOpen && type === "editChannel";
-  const { channel, server } = data;
+  const { channel, server } = data ||{};
 
   const form = useForm({
     resolver: zodResolver(formSchema),
